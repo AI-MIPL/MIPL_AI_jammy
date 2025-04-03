@@ -1,0 +1,19 @@
+path: ../static/yolo_data
+train: images/train
+val: images/val
+
+names:
+  0: human
+  1: lion
+  2: tiger
+  3: leopard
+  4: cheetah
+  5: wolf
+  6: bear
+  7: deer
+  8: bison
+  9: wild boar
+  10: hyena
+  11: jaguar
+  12: dog
+  13: cat

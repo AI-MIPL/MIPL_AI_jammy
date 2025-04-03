@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Annotation Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .file-list {
+            margin: 20px 0;
+        }
+        .file-item {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Annotation Tool</h1>
+    
+    <div class="upload-section">
+        <h2>Upload New Files</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" multiple>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+    
+    <div class="file-list">
+        <h2>Videos</h2>
+        {% for video in videos %}
+        <div class="file-item">
+            <a href="{{ url_for('annotate', filename=video) }}">{{ video }}</a>
+        </div>
+        {% endfor %}
+        
+        <h2>Frames</h2>
+        {% for frame in frames %}
+        <div class="file-item">
+            <a href="{{ url_for('annotate', filename=frame) }}">{{ frame }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
